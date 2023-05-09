@@ -1,7 +1,7 @@
 .vscode
-razor/obj/
-razor/bin/
-lesson2/obj/
-lesson2/bin/
-webapi/obj/
-webapi/bin/
+razor/obj
+razor/bin
+lesson2/obj
+lesson2/bin
+webapi/obj
+webapi/bin
