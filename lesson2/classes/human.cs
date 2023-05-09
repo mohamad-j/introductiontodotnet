@@ -13,9 +13,9 @@ class MainHuman : IHuman {
              
             _name =  value;
 
-            if( value.StartsWith("X-") ) {
+            if( !String.IsNullOrEmpty( value ) && value.StartsWith("X-") ) {
                 _gender = "GIRL";
-            } else if ( value.StartsWith("Y-") ) {
+            } else if ( !String.IsNullOrEmpty( value ) && value.StartsWith("Y-") ) {
                 _gender = "BOY";
             } else {
                 _gender = null;
