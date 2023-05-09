@@ -1,0 +1,34 @@
+﻿@page
+@using Classes;
+
+@{
+    ViewData["Title"] = "Home page";
+
+    Student student = new Student("Moha", 2342 );
+    
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <p>
+        Student name : @student.name
+    </p>
+
+    <p>
+        Student age : @student.age
+    </p>
+
+
+@{
+    student.name = "Changed ";
+}
+
+
+    <p>
+        Student name : @student.name
+    </p>
+
+
+</div>
