@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+﻿
+@{
+    var urlPath = Context.Request.Path;
+
+
+}
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -34,6 +41,7 @@
         </nav>
     </header>
     <div class="container">
+        <h1> The path is : @urlPath</h1>
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -48,6 +56,11 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @if( urlPath.StartsWithSegments("/student") ) {
+        urlPath = "/js/student.js";
+    }
+    <script src=" @urlPath " ></script>
 
     @await RenderSectionAsync("Scripts", required: false)
 </body>

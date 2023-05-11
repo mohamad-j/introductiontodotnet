@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 //using Newtonsoft.Json;
-using System.Text.Json;
+
 using Classes;
 
 namespace Controllers;
 
-[ApiController]
-public class ApiStudents : ControllerBase {
+
+public class ApiStudents : BasicController {
 
     private class Params {
         public string? name{ set; get; }
@@ -20,15 +20,9 @@ public class ApiStudents : ControllerBase {
         // return body["request_body"];
         HttpContext.Response.Headers.Add("Content-Type", "application/json");
 
-        string? body="";
-      using (StreamReader stream = new StreamReader(Request.Body))
-        {
-            body = await stream.ReadToEndAsync();
-        }
-
-        var dict = JsonSerializer.Deserialize< Params >( body );
+        var dict =  getBody< Params >();  
         
-        return  JsonSerializer.Serialize( dict );
+        return  "";
     }
 
 }

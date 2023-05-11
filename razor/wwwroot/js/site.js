@@ -8,12 +8,18 @@ function addstudent()
 {
     console.log(" add stuent ");
 
+    let _age = document.getElementById('age');
+    let _name = document.getElementById('name');
+
+    let data = { name: _name.value , age: parseInt( _age.value ) };
+
+    console.log( "data : ", data  );
 
     fetch('/api/student/create', 
     { 
         method: 'post', 
         headers:{ 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name: "moha", age: 234 })
+        body: JSON.stringify( data )
     }
     
     )
